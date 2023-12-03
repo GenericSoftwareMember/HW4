@@ -72,51 +72,47 @@ $(document).ready(function() {
 
     // Function to create the table and populate it with the correct values
     function generateTable(minRow, maxRow, minColumn, maxColumn) {
-
-        const tableContainer = document.getElementById("tableContainer");
-        tableContainer.innerHTML = "";
-
-        const table = document.createElement("table");
-
-        const topRow = document.createElement("tr");
-        topRow.appendChild(document.createElement("th"));
-
+        const tableContainer = $('#tableContainer');
+        tableContainer.empty();
+    
+        const table = $('<table></table>');
+    
+        const topRow = $('<tr></tr>');
+        topRow.append($('<th></th>'));
+    
         // For-loop to create header row
         for (let i = minRow; i <= maxRow; i++) {
-            const th = document.createElement("th");
-            th.textContent = i;
-            topRow.appendChild(th);
+          const th = $('<th></th>').text(i);
+          topRow.append(th);
         }
-
+    
         // Appends header row to top of table
-        table.appendChild(topRow);
-
+        table.append(topRow);
+    
         // Nested for-loop to create rows and columns of table
         for (let i = minColumn; i <= maxColumn; i++) {
-            const row = document.createElement("tr");
-
-            const th = document.createElement("th");
-            th.textContent = i;
-            row.appendChild(th);
-
-            // Calculates each value in a row
-            for (let j = minRow; j <= maxRow; j++) {
-                const td = document.createElement("td");
-                td.textContent = i * j;
-                row.appendChild(td);
-            }
-
-            // Appends each completed row
-            table.appendChild(row);
+          const row = $('<tr></tr>');
+    
+          const th = $('<th></th>').text(i);
+          row.append(th);
+    
+          // Calculates each value in a row
+          for (let j = minRow; j <= maxRow; j++) {
+            const td = $('<td></td>').text(i * j);
+            row.append(td);
+          }
+    
+          // Appends each completed row
+          table.append(row);
         }
-
+    
         // Appends table to the container
-        tableContainer.appendChild(table);
-    }
-
+        tableContainer.append(table);
+      }
+    
     // Function to display the error message
     function displayError(elementId, message) {
-        const errorMessageElement = document.getElementById(elementId);
-        errorMessageElement.textContent = message;
-    }
-});
+    const errorMessageElement = $('#' + elementId);
+    errorMessageElement.text(message);
+      }
+    });
