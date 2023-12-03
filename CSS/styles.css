@@ -71,3 +71,20 @@ tr:nth-child(even) {
     max-height: 400px;
     overflow: auto;
 }
+
+/* Making the top row sticky */
+.scrollable-container thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: darkgrey;
+}
+
+/* Making the first column sticky */
+.scrollable-container th:first-child,
+.scrollable-container td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background-color: darkgrey;
+}
