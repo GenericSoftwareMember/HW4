@@ -4,9 +4,9 @@ Email: kevinsree@student.uml.edu
 File: script.js
 */
 
-$(document).ready(function() {
+jquery(document).ready(function() {
     // Initialize form validation
-    $('#multiplicationForm').validate({
+    jquery('#multiplicationForm').validate({
       // Specify validation rules
       rules: {
         minRow: {
@@ -114,5 +114,5 @@ $(document).ready(function() {
     function displayError(elementId, message) {
     const errorMessageElement = $('#' + elementId);
     errorMessageElement.text(message);
-      }
-    });
+    }
+});
