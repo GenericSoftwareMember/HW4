@@ -4,9 +4,9 @@ Email: kevinsree@student.uml.edu
 File: script.js
 */
 
-jquery(document).ready(function() {
+jQuery(document).ready(function() {
     // Initialize form validation
-    jquery('#multiplicationForm').validate({
+    jQuery('#multiplicationForm').validate({
       // Specify validation rules
       rules: {
         minRow: {
