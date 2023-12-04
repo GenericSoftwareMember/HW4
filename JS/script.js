@@ -48,10 +48,10 @@ jQuery(document).ready(function() {
       // Handle form submission if validation passes
       submitHandler: function(form) {
         // Get values
-        const minRow = parseInt($('#minRow').val());
-        const maxRow = parseInt($('#maxRow').val());
-        const minColumn = parseInt($('#minColumn').val());
-        const maxColumn = parseInt($('#maxColumn').val());
+        const minRow = parseInt(jQuery('#minRow').val());
+        const maxRow = parseInt(jQuery('#maxRow').val());
+        const minColumn = parseInt(jQuery('#minColumn').val());
+        const maxColumn = parseInt(jQuery('#maxColumn').val());
   
         // Validate and generate table
         if (!isNaN(minRow) && !isNaN(maxRow) && !isNaN(minColumn) && !isNaN(maxColumn)) {
@@ -72,17 +72,17 @@ jQuery(document).ready(function() {
 
     // Function to create the table and populate it with the correct values
     function generateTable(minRow, maxRow, minColumn, maxColumn) {
-        const tableContainer = $('#tableContainer');
+        const tableContainer = jQuery('#tableContainer');
         tableContainer.empty();
     
-        const table = $('<table></table>');
+        const table = jQuery('<table></table>');
     
-        const topRow = $('<tr></tr>');
-        topRow.append($('<th></th>'));
+        const topRow = jQuery('<tr></tr>');
+        topRow.append(jQuery('<th></th>'));
     
         // For-loop to create header row
         for (let i = minRow; i <= maxRow; i++) {
-          const th = $('<th></th>').text(i);
+          const th = jQuery('<th></th>').text(i);
           topRow.append(th);
         }
     
@@ -91,14 +91,14 @@ jQuery(document).ready(function() {
     
         // Nested for-loop to create rows and columns of table
         for (let i = minColumn; i <= maxColumn; i++) {
-          const row = $('<tr></tr>');
+          const row = jQuery('<tr></tr>');
     
-          const th = $('<th></th>').text(i);
+          const th = jQuery('<th></th>').text(i);
           row.append(th);
     
           // Calculates each value in a row
           for (let j = minRow; j <= maxRow; j++) {
-            const td = $('<td></td>').text(i * j);
+            const td = jQuery('<td></td>').text(i * j);
             row.append(td);
           }
     
@@ -112,7 +112,7 @@ jQuery(document).ready(function() {
     
     // Function to display the error message
     function displayError(elementId, message) {
-    const errorMessageElement = $('#' + elementId);
+    const errorMessageElement = jQuery('#' + elementId);
     errorMessageElement.text(message);
     }
 });
